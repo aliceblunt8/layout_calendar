@@ -1,0 +1,22 @@
+//Hide extra days
+@for $i from 28 through 31 {
+  .calendar-#{$i} > div:nth-child(n + #{$i+1}) {
+    display: none;
+  }
+}
+
+//Add day of the month to cell
+@for $i from 1 through 31 {
+  .calendar > div:nth-child(#{$i})::before {
+    content: "#{$i}";
+  }
+}
+
+//Start calendar from the correct day of the week
+@each $weekDay, $dayOrder in $daysOfWeek {
+  .calendar-#{$weekDay} {
+    div:first-child {
+      margin-left: ($cellWidth + $cellMargin) * $dayOrder;
+    }
+  }
+}

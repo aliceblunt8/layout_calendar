@@ -1,0 +1,23 @@
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  width: ($cellWidth + $cellMargin) * 7;
+  margin: 50px auto;
+
+  > div {
+    width: $cellWidth;
+    height: $cellHeight;
+    background-color: #eee;
+    border: $cellBorder solid #000;
+    margin-right: $cellMargin;
+    margin-bottom: $cellMargin;
+    line-height: $cellHeight;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: #f6bfca;
+      transform: translateY(-20px);
+      transition: 0.5s;
+    }
+  }
+}
